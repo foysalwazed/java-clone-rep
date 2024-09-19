@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo MFS</title>
+    
+    <!-- Include TailwindCSS and DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- TailwindCSS Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <main class="flex justify-center items-center">
+        <div class="mockup-phone">
+            <div class="camera"></div>
+            <div class="display">
+                <div class="artboard artboard-demo phone-3 p-4">
+                    <!-- Login Section -->
+                    <div class="hero bg-base-200 min-h-screen flex justify-center items-center">
+                        <div class="hero-content flex-col text-center">
+                            <div class="card bg-base-100 w-full max-w-sm shadow-2xl">
+                                <form class="card-body">
+                                    <div class="form-control">
+                                        <label class="label">
+                                            <span class="label-text">Phone Number</span>
+                                        </label>
+                                        <input id="phone-number" type="text" placeholder="Enter Your Phone Number" class="input input-bordered" required />
+                                    </div>
+                                    <div class="form-control">
+                                        <label class="label">
+                                            <span class="label-text">Pin</span>
+                                        </label>
+                                        <input id="pin-number" type="password" placeholder="Enter Your Pin" class="input input-bordered" required />
+                                        <label class="label">
+                                            <a href="#" class="label-text-alt link link-hover">Forget Password?</a>
+                                        </label>
+                                    </div>
+                                    <div class="form-control mt-6">
+                                        <button id="button-login" class="btn btn-primary">Login</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- External JavaScript File -->
+    <script src="login.js"></script>
+</body>
+</html>

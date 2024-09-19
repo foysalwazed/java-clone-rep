@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo Home Page</title>
+    <!-- Include DaisyUI and TailwindCSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <main class="flex justify-center min-h-screen items-center bg-gray-100">
+        <div class="mockup-phone">
+            <div class="camera"></div>
+            <div class="display">
+                <div class="artboard artboard-demo phone-3 p-4">
+                    <!-- Available Balance -->
+                    <div class="stats shadow mb-4">
+                        <div class="stat">
+                            <div id="account-balance" class="stat-value text-3xl">89,400</div>
+                            <div class="stat-desc">Available Balance</div>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <!-- User Action Buttons -->
+                    <div class="flex justify-between mb-4">
+                        <button id="show-add-money-form" class="btn btn-lg btn-primary w-full mr-2">Add Money</button>
+                        <button id="btn-show-cash-out-form" class="btn btn-lg btn-secondary w-full">Cash Out</button>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <!-- Add Money Form -->
+                    <div id="add-money-form" class="card bg-base-100 w-full max-w-sm shadow-2xl hidden">
+                        <form class="card-body">
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Amount</span>
+                                </label>
+                                <input id="input-add-money" type="text" placeholder="Amount" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Pin</span>
+                                </label>
+                                <input id="input-pin-number-add" type="password" placeholder="Pin Number" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control mt-6">
+                                <button id="btn-add-money" class="btn btn-primary">Add Money</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Cash Out Form -->
+                    <div id="cash-out-form" class="card bg-base-100 w-full max-w-sm shadow-2xl hidden">
+                        <form class="card-body">
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Amount</span>
+                                </label>
+                                <input id="input-cash-out" type="text" placeholder="Cash Out Amount" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Pin</span>
+                                </label>
+                                <input id="cashout-pin-number" type="password" placeholder="Pin Number" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control mt-6">
+                                <button id="btn-cash-out" class="btn btn-primary">Cash Out</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript to toggle forms visibility -->
+    <script>
+        document.getElementById('show-add-money-form').addEventListener('click', function () {
+            document.getElementById('add-money-form').classList.toggle('hidden');
+            document.getElementById('cash-out-form').classList.add('hidden');
+        });
+
+        document.getElementById('btn-show-cash-out-form').addEventListener('click', function () {
+            document.getElementById('cash-out-form').classList.toggle('hidden');
+            document.getElementById('add-money-form').classList.add('hidden');
+        });
+    </script>
+    <!-- External scripts -->
+    <script src="home.js"></script>
+    <script src="cashout.js"></script>
+    <script src="features.js"></script>
+</body>
+</html>
